@@ -1,0 +1,192 @@
+/* Waybar Pretty Theme for Arch Linux + Hyprland */
+/* Modern, glassy, and pleasant with accent blue and rounded corners */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "FontAwesome", "sans-serif";
+  font-size: 12px;
+  border: none;
+  border-radius: 14px;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+window#waybar {
+  background: rgba(24, 27, 39, 0.93);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 6px 18px 0 rgba(30, 42, 76, 0.1);
+  color: #f3f5fa;
+  margin: 8px 12px;
+  border: 1.5px solid #23263a;
+}
+
+/* Module containers */
+#workspaces,
+#window,
+#clock,
+#tray,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#custom-media,
+#custom-current_app,
+#custom-power,
+#battery,
+#idle_inhibitor,
+#custom-notifications {
+  background: rgba(35, 49, 68, 0.66);
+  margin: 0 6px;
+  padding: 0 15px;
+  border-radius: 12px;
+  min-width: 32px;
+  min-height: 32px;
+  box-shadow: 0 2px 8px 0 rgba(50, 80, 170, 0.08);
+}
+
+#workspaces {
+  padding: 0 10px;
+  background: rgba(50, 70, 170, 0.15);
+}
+#workspaces button {
+  color: #b3c8f7;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0 8px;
+  margin: 0 2px;
+  border: none;
+  font-weight: 500;
+}
+#workspaces button.active {
+  background: linear-gradient(90deg, #4f91ff 60%, #3066d6 100%);
+  color: #fff;
+  box-shadow: 0 2px 6px #4f91ff33;
+}
+#workspaces button.urgent {
+  background: #f65b5b;
+  color: #fff;
+}
+#workspaces button:hover {
+  background: #274472;
+  color: #fff;
+}
+
+#window {
+  font-weight: 500;
+  color: #c5d1f7;
+  background: rgba(43, 51, 74, 0.8);
+  padding-left: 20px;
+}
+
+#clock {
+  background: linear-gradient(90deg, #3b5fff 55%, #2e3951 100%);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#cpu,
+#memory,
+
+
+
+#pulseaudio {
+  background: rgba(31, 49, 80, 0.6);
+  color: #91baff;
+}
+#pulseaudio.muted {
+  color: #627bb7;
+  background: rgba(80, 30, 30, 0.22);
+}
+
+#network {
+  color: #9affb6;
+  background: rgba(30, 80, 50, 0.22);
+}
+#network.disconnected {
+  color: #ff8d8d;
+  background: rgba(80, 30, 30, 0.22);
+}
+
+#tray {
+  background: rgba(40, 38, 70, 0.67);
+  padding: 0 12px;
+}
+
+#idle_inhibitor {
+  color: #f4ec78;
+  background: rgba(77, 70, 20, 0.22);
+}
+
+#custom-power {
+  background: linear-gradient(90deg, #ff5e68 60%, #a73c50 100%);
+  color: #fff;
+  font-size: 19px;
+  font-weight: bold;
+  margin-right: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+#custom-power:hover {
+  box-shadow: 0 2px 8px #ff5e6833;
+}
+
+#custom-current_app {
+  color: #c5e1ff;
+  font-weight: 400;
+}
+
+#custom-media {
+  background: rgba(41, 51, 61, 0.68);
+  color: #ffb58d;
+  min-width: 100px;
+}
+
+#custom-notifications {
+  background: rgba(40, 38, 70, 0.65);
+  color: #ffc978;
+  font-size: 17px;
+}
+
+#battery {
+  background: rgba(30, 80, 30, 0.18);
+  color: #baffc2;
+}
+
+/* Optional: Hide window module if empty */
+#window.empty {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+#backlight {
+  background: rgba(255, 255, 120, 0.12);
+  color: #ffe066;
+  margin: 0 6px;
+  padding: 0 15px;
+  border-radius: 12px;
+  min-width: 32px;
+  min-height: 32px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px 0 rgba(255, 255, 120, 0.07);
+}
+
+/* Rounded corners for first/last module on each side */
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+  border-radius: 14px;
+}
+
+/* Remove left margin for first, right margin for last */
+.modules-left > *:first-child,
+.modules-center > *:first-child,
+.modules-right > *:first-child {
+  margin-left: 0;
+}
+.modules-left > *:last-child,
+.modules-center > *:last-child,
+.modules-right > *:last-child {
+  margin-right: 0;
+}
