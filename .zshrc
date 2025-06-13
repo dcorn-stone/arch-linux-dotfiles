@@ -111,6 +111,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 export PATH="$PATH:/opt/VSCode-linux-x64/bin"
 
 
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias steam='com.valvesoftware.Steam'
+alias vi='nvim'
+
+export XDG_DATA_DIRS="$HOME/.local/share/:/usr/local/share/:/usr/share/"
+
