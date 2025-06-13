@@ -1,9 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.cmd("highlight Comment guifg=#32a852")
-vim.cmd("highlight @variable guifg=#28f0fa")
-
 require("neo-tree").setup({
   filesystem = {
     filtered_items = {
