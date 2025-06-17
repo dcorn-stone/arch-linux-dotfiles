@@ -116,6 +116,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias steam='com.valvesoftware.Steam'
 alias vi='nvim'
+alias cl='clear'
 
 export XDG_DATA_DIRS="$HOME/.local/share/:/usr/local/share/:/usr/share/"
 
