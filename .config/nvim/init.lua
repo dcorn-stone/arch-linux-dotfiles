@@ -14,3 +14,6 @@ require("neo-tree").setup({
   },
   -- You can add configurations for buffers, git_status, etc., if needed.
 })
+
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP Rename" })
+
