@@ -16,4 +16,3 @@ require("neo-tree").setup({
 })
 
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP Rename" })
-
