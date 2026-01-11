@@ -1,25 +1,24 @@
-/* Waybar Pretty Theme for Arch Linux + Hyprland */
-/* Modern, glassy, and pleasant with accent blue and rounded corners */
-
+/* Waybar Cyberpunk Neon Theme for Hyprland */
 * {
-  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "FontAwesome", "sans-serif";
-  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "FontAwesome", sans-serif;
+  font-size: 15px;
   border: none;
   border-radius: 14px;
-  box-shadow: none;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease;
 }
 
 window#waybar {
-  background: rgba(24, 27, 39, 0.93);
-  border-radius: 0 0 18px 18px;
-  box-shadow: 0 6px 18px 0 rgba(30, 42, 76, 0.1);
-  color: #f3f5fa;
-  margin: 8px 12px;
-  border: 1.5px solid #23263a;
+  background: rgba(8, 8, 12, 0.8);
+  border-radius: 18px;
+  margin: 12px 16px;
+  /* Floating effect: soft shadow + neon glow */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px #39ff1433,     /* subtle inner neon border */
+    0 0 12px #39ff1422;      /* outer neon glow */
 }
 
-/* Module containers */
+/* Apply neon outline + floating to all modules */
 #workspaces,
 #window,
 #clock,
@@ -29,26 +28,32 @@ window#waybar {
 #cpu,
 #memory,
 #custom-media,
-#custom-current_app,
 #custom-power,
 #battery,
 #idle_inhibitor,
-#custom-notifications {
-  background: rgba(35, 49, 68, 0.66);
+#backlight {
+  background: rgba(18, 18, 28, 0.75);
   margin: 0 6px;
-  padding: 0 15px;
+  padding: 0 14px;
   border-radius: 12px;
+  min-height: 30px;
   min-width: 32px;
-  min-height: 32px;
-  box-shadow: 0 2px 8px 0 rgba(50, 80, 170, 0.08);
+  /* Neon green outline via box-shadow */
+  box-shadow:
+    inset 0 0 0 1px #39ff1444,   /* inner neon ring */
+    0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #e0f0e0;
+  border: 1px solid transparent; /* ensures consistent sizing */
 }
+
+/* Special styling per module */
 
 #workspaces {
   padding: 0 10px;
-  background: rgba(50, 70, 170, 0.15);
+  background: rgba(20, 25, 40, 0.7);
 }
 #workspaces button {
-  color: #b3c8f7;
+  color: #a0e0a0;
   background: transparent;
   border-radius: 8px;
   padding: 0 8px;
@@ -57,129 +62,101 @@ window#waybar {
   font-weight: 500;
 }
 #workspaces button.active {
-  background: linear-gradient(90deg, #4f91ff 60%, #3066d6 100%);
-  color: #fff;
-  box-shadow: 0 2px 6px #4f91ff33;
+  background: rgba(57, 255, 20, 0.25);
+  color: #ffffff;
+  box-shadow: 0 0 8px #39ff1466;
 }
 #workspaces button.urgent {
-  background: #f65b5b;
+  background: rgba(255, 60, 60, 0.4);
   color: #fff;
 }
 #workspaces button:hover {
-  background: #274472;
+  background: rgba(57, 255, 20, 0.15);
   color: #fff;
 }
 
 #window {
   font-weight: 500;
-  color: #c5d1f7;
-  background: rgba(43, 51, 74, 0.8);
-  padding-left: 20px;
+  color: #c0ffc0;
+  background: rgba(22, 28, 42, 0.75);
+  padding-left: 18px;
 }
 
 #clock {
-  background: linear-gradient(90deg, #3b5fff 55%, #2e3951 100%);
-  color: #fff;
+  background: rgba(15, 25, 20, 0.8);
+  color: #d0ffd0;
   font-weight: 600;
-  letter-spacing: 1.3px;
-  padding-left: 16px;
-  padding-right: 16px;
+  letter-spacing: 1px;
+  padding: 0 16px;
+  box-shadow:
+    inset 0 0 0 1px #39ff1466,
+    0 4px 12px rgba(0, 0, 0, 0.35);
 }
-
-#cpu,
-#memory,
-
-
 
 #pulseaudio {
-  background: rgba(31, 49, 80, 0.6);
-  color: #91baff;
+  color: #a0ffb0;
 }
 #pulseaudio.muted {
-  color: #627bb7;
-  background: rgba(80, 30, 30, 0.22);
+  color: #707070;
+  background: rgba(30, 30, 40, 0.7);
 }
 
 #network {
-  color: #9affb6;
-  background: rgba(30, 80, 50, 0.22);
+  color: #a0ffa0;
 }
 #network.disconnected {
-  color: #ff8d8d;
-  background: rgba(80, 30, 30, 0.22);
+  color: #ff8080;
+  background: rgba(40, 20, 20, 0.7);
+}
+
+#cpu,
+#memory {
+  color: #b0ffb0;
 }
 
 #tray {
-  background: rgba(40, 38, 70, 0.67);
+  background: rgba(25, 25, 40, 0.7);
   padding: 0 12px;
 }
 
 #idle_inhibitor {
-  color: #f4ec78;
-  background: rgba(77, 70, 20, 0.22);
+  color: #ffffa0;
+  background: rgba(30, 30, 20, 0.7);
 }
 
 #custom-power {
-  background: linear-gradient(90deg, #ff5e68 60%, #a73c50 100%);
-  color: #fff;
+  background: rgba(40, 10, 15, 0.75);
+  color: #ff9090;
   font-size: 19px;
   font-weight: bold;
   margin-right: 8px;
-  transition: background 0.2s, color 0.2s;
 }
 #custom-power:hover {
-  box-shadow: 0 2px 8px #ff5e6833;
-}
-
-#custom-current_app {
-  color: #c5e1ff;
-  font-weight: 400;
+  box-shadow:
+    inset 0 0 0 1px #ff555566,
+    0 0 12px #ff555544;
 }
 
 #custom-media {
-  background: rgba(41, 51, 61, 0.68);
-  color: #ffb58d;
+  color: #ffd0a0;
+  background: rgba(25, 28, 35, 0.75);
   min-width: 100px;
 }
 
-#custom-notifications {
-  background: rgba(40, 38, 70, 0.65);
-  color: #ffc978;
-  font-size: 17px;
+#backlight {
+  color: #ffffb0;
+  background: rgba(30, 30, 20, 0.7);
 }
 
-#battery {
-  background: rgba(30, 80, 30, 0.18);
-  color: #baffc2;
-}
-
-/* Optional: Hide window module if empty */
+/* Hide empty window title cleanly */
 #window.empty {
   background: transparent;
   box-shadow: none;
   padding: 0;
+  min-width: 0;
 }
 
-#backlight {
-  background: rgba(255, 255, 120, 0.12);
-  color: #ffe066;
-  margin: 0 6px;
-  padding: 0 15px;
-  border-radius: 12px;
-  min-width: 32px;
-  min-height: 32px;
-  font-weight: 500;
-  box-shadow: 0 2px 8px 0 rgba(255, 255, 120, 0.07);
-}
-
-/* Rounded corners for first/last module on each side */
-.modules-left > *,
-.modules-center > *,
-.modules-right > * {
-  border-radius: 14px;
-}
-
-/* Remove left margin for first, right margin for last */
+/* Ensure first/last modules don’t have extra margin */
 .modules-left > *:first-child,
 .modules-center > *:first-child,
 .modules-right > *:first-child {
